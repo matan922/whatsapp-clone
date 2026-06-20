@@ -8,12 +8,23 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
+    displayName: {
+        type: String,
+        required: true,
+    },
+    avatar: {
+        type: String,
+        default: "",
+    },
+    phoneNumber: {
+        type: String,
+        default: null,
+    },
     createdAt: {
         type: Date,
-        default: Date.now
-    }
-
-})
+        default: Date.now,
+    },
+});
 
 
 export default mongoose.model("User", userSchema);
